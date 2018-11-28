@@ -6,7 +6,7 @@ Resources:
     Properties:
       Name: !Sub
         - ${ResourceName} From Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName}
-        - ResourceName: apiE0AB840E
+        - ResourceName: formApi
       StageName: !Ref StackeryEnvironmentAPIGatewayStageName
       DefinitionBody:
         swagger: '2.0'
@@ -27,6 +27,8 @@ Resources:
                 uri: !Sub arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${functionB26DEC32.Arn}/invocations
               responses: {}
       EndpointConfiguration: REGIONAL
+    Metadata:
+      StackeryName: formApi
   function80778FF8:
     Type: AWS::Serverless::Function
     Properties:
